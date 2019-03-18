@@ -1,20 +1,60 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
   <title>jQuery Lab 01</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Rubik:400,700" rel="stylesheet">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Rubik:400,700"
+        rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+        rel="stylesheet">
+  <link rel="stylesheet"
+        type="text/css"
+        media="screen"
+        href="main.css">
 </head>
-<body>
 
-    <i class="material-icons">face</i>
+<body>
+  <main class="container">
+    <section class="section">
+      <h1 class="text-center">Table Finder</h1>
+      <p class="text-center">Pick your table now</p>
+    </section>
+    <section class="section">
+      <div class="tables">
+      </div>
+    </section>
+  </main>
+  <aside class="modal hide"
+         id="reservationForm">
+    <i id="modalClose" class="pointer material-icons">close</i>
+    <div class="flex-container">
+      <h2>New Reservation</h2>
+      <div>Table Number: <span id="selected-table-number">None</span></div>
+      <input type="text"
+             name="reservation-name"
+             id="reservationName"
+             placeholder="Your name">
+      <input type="tel"
+             name="reservation-phone"
+             id="reservationPhone"
+             placeholder="Your phone">
+      <input type="date"
+             name="reservation-date"
+             id="reservationDate"
+             placeholder="The date to reserve">
+      <div id="buttonSave" class="button pointer">Save</div>
+    </div>
+  </aside>
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script>
   <script src="main.js"></script>
 </body>
+
 </html>
