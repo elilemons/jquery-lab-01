@@ -48,6 +48,11 @@ $(() => {
 
       // Handle the "x" button on the modal
       $('#modalClose').on('click', this.hideModal);
+      $('.modal').on('click', (e) => {
+        if (e.target === e.currentTarget) { // If you click outside of .modal-inner, we close the modal
+          this.hideModal();
+        }
+      });
     }
 
     /**
@@ -56,17 +61,16 @@ $(() => {
      */
     showModal(tableId) {
       this.selectedTable = this.floorPlan.tables[tableId - 1]; // Table number starts at 1, array at 0
-      $('.modal').removeClass('hide');
+      $('.modal').fadeIn();
       $('#selected-table-number').text(tableId);
-      // $('body').on('click', this.hideModal);
     }
 
     /**
      * Adds the hide class to the modal
      * and clears the selected table.
      */
-    hideModal() {
-      $('.modal').addClass('hide');
+    hideModal(event) {
+      $('.modal').fadeOut();
       this.selectedTable = undefined;
     }
 
@@ -122,6 +126,7 @@ $(() => {
     }
   }
 
+  /** Actually create the app and run the setup function */
   let ui = new UI();
   ui.setupUI();
 });
